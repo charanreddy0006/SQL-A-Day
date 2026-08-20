@@ -955,34 +955,3 @@ Demonstrate a transaction.
 
 Generate final reports.
 
-Git Commands
-
-git add .
-
-git commit -m "Day 63 - Online Store Sales and Inventory Management System"
-
-git push
-
-Project Status
-
-Day: 63
-Project: Online Store Sales & Inventory Management System
-Database: MySQL
-Type: SQL Mini Project
-Status: Completed
-
-SQL-A-Day Progress
-
-Day 59 - Advanced SQL Indexing
-Day 60 - Advanced SQL Analytics Project
-Day 61 - SQL Views
-Day 62 - SQL Triggers
-Day 63 - Online Store Sales & Inventory Management System
-
-Author
-
-Charan Kumar Reddy
-
-B.Tech CSE - AI & ML
-
-SQL-A-Day Learning Repository
