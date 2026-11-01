@@ -1,0 +1,72 @@
+-- Day 97: SupportPulse — deterministic sample dataset
+-- All timestamps use UTC to keep examples consistent.
+
+INSERT INTO agents (agent_id, agent_name, team_name, hire_date) VALUES
+(1, 'Aarav Shah',   'Platform',  '2023-04-10'),
+(2, 'Maya Iyer',    'Platform',  '2022-11-21'),
+(3, 'Rohan Mehta',  'Payments',  '2024-01-15'),
+(4, 'Sara Khan',    'Payments',  '2023-08-07'),
+(5, 'Ishaan Patel', 'Customer',  '2024-05-13');
+
+INSERT INTO customers (customer_id, company_name, plan, country) VALUES
+(101, 'Northstar Labs',   'Enterprise', 'US'),
+(102, 'BluePeak Retail',  'Pro',        'IN'),
+(103, 'Orbit Learning',   'Starter',    'GB'),
+(104, 'Cedar Analytics',  'Enterprise', 'CA'),
+(105, 'PixelCart',        'Free',       'IN'),
+(106, 'Helio Systems',    'Pro',        'DE');
+
+INSERT INTO tickets
+(ticket_id, customer_id, agent_id, subject, priority, status,
+ created_at, first_response_at, resolved_at)
+VALUES
+(1001, 101, 1, 'Production API unavailable',       'Critical', 'Resolved',
+ '2026-10-20 08:00+00', '2026-10-20 08:08+00', '2026-10-20 10:10+00'),
+(1002, 102, 2, 'Checkout latency increased',       'High', 'Resolved',
+ '2026-10-20 09:00+00', '2026-10-20 10:20+00', '2026-10-20 18:00+00'),
+(1003, 103, 5, 'Cannot reset account password',    'Medium', 'Resolved',
+ '2026-10-20 10:00+00', '2026-10-20 11:00+00', '2026-10-21 09:00+00'),
+(1004, 104, 3, 'Payment webhook failures',         'Critical', 'Resolved',
+ '2026-10-21 07:30+00', '2026-10-21 08:05+00', '2026-10-21 14:00+00'),
+(1005, 105, 5, 'How to export a report',           'Low', 'Resolved',
+ '2026-10-21 09:00+00', '2026-10-21 12:00+00', '2026-10-23 09:00+00'),
+(1006, 106, 4, 'Duplicate invoice generated',      'High', 'Resolved',
+ '2026-10-21 11:00+00', '2026-10-21 11:25+00', '2026-10-21 16:00+00'),
+(1007, 101, 1, 'Database connection pool exhausted','High', 'Resolved',
+ '2026-10-22 06:00+00', '2026-10-22 06:30+00', '2026-10-22 20:30+00'),
+(1008, 102, 2, 'Product images not loading',       'Medium', 'Resolved',
+ '2026-10-22 08:00+00', '2026-10-22 13:30+00', '2026-10-23 10:00+00'),
+(1009, 103, 5, 'Update billing contact',           'Low', 'Resolved',
+ '2026-10-22 10:00+00', '2026-10-22 10:45+00', '2026-10-24 08:00+00'),
+(1010, 104, 3, 'Settlement batch delayed',         'Critical', 'Resolved',
+ '2026-10-23 05:00+00', '2026-10-23 05:10+00', '2026-10-23 08:30+00'),
+(1011, 105, 5, 'Mobile app crashes on launch',     'High', 'In Progress',
+ '2026-10-23 12:00+00', '2026-10-23 12:40+00', NULL),
+(1012, 106, 4, 'Unable to download statement',     'Medium', 'Open',
+ '2026-10-24 07:00+00', NULL, NULL),
+(1013, 101, 1, 'Security alert requires review',   'Critical', 'In Progress',
+ '2026-10-24 09:00+00', '2026-10-24 09:12+00', NULL),
+(1014, 102, 2, 'Tax field missing from invoice',    'Low', 'Resolved',
+ '2026-10-24 10:00+00', '2026-10-24 19:00+00', '2026-10-29 12:00+00'),
+(1015, 103, 5, 'Course enrollment not syncing',    'Medium', 'Resolved',
+ '2026-10-25 08:00+00', '2026-10-25 08:30+00', '2026-10-26 12:00+00'),
+(1016, 104, 3, 'Card authorization timeout',       'High', 'Resolved',
+ '2026-10-25 11:00+00', '2026-10-25 12:15+00', '2026-10-26 02:00+00'),
+(1017, 105, 5, 'Change profile photo',             'Low', 'Open',
+ '2026-10-26 06:00+00', NULL, NULL),
+(1018, 106, 4, 'Refund status not updating',       'High', 'Resolved',
+ '2026-10-26 08:00+00', '2026-10-26 08:20+00', '2026-10-26 19:00+00'),
+(1019, 101, 1, 'Search service returning errors',  'Critical', 'Resolved',
+ '2026-10-27 04:00+00', '2026-10-27 04:12+00', '2026-10-27 07:00+00'),
+(1020, 102, 2, 'Dashboard chart is blank',         'Medium', 'Resolved',
+ '2026-10-27 09:00+00', '2026-10-27 14:00+00', '2026-10-29 14:00+00'),
+(1021, 103, 5, 'Request for onboarding session',   'Low', 'Resolved',
+ '2026-10-28 08:00+00', '2026-10-28 09:00+00', '2026-10-30 08:00+00'),
+(1022, 104, 3, 'Recurring payment declined',       'High', 'In Progress',
+ '2026-10-29 06:00+00', '2026-10-29 06:40+00', NULL),
+(1023, 106, 4, 'API key rotation question',        'Medium', 'Resolved',
+ '2026-10-29 10:00+00', '2026-10-29 11:00+00', '2026-10-30 10:00+00'),
+(1024, 105, 5, 'Cannot change notification email','Low', 'Resolved',
+ '2026-10-30 07:00+00', '2026-10-30 07:30+00', '2026-10-31 07:00+00'),
+(1025, 101, 1, 'Critical data ingestion stalled', 'Critical', 'Open',
+ '2026-10-31 08:00+00', NULL, NULL);
